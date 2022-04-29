@@ -1,0 +1,50 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">nummer</th>
+        <th scope="col">adresse</th>
+      
+  
+      </tr>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+    </thead>
+    <tbody>
+        <tr>
+        <th scope="row">{{todoToBeUpdated.id}}</th>
+          <td>{{todoToBeUpdated.name}}</td>
+        <td>{{todoToBeUpdated.nummer}}</td>
+        <td>{{todoToBeUpdated.adresse}}</td>
+
+      </tr>
+    
+    </tbody>
+  
+  </table>
+
+    <h2>Update:</h2>
+
+    <label>
+        id
+        <input type ="number" formControlName ="id" >
+      </label>
+    
+      <label>
+        name 
+        <input type="text" formControlName="name"> 
+      </label>
+      
+      <label>
+        nummer
+        <input type="number" formControlName="nummer">
+      </label>
+
+      <label>
+        adresse
+      <input type="text" formControlName="adresse">
+      </label>
+      <input type ="submit" value ="Submit the Updates" onclick="window.location.reload();">
+    
+    

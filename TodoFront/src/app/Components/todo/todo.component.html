@@ -1,0 +1,67 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">nummer</th>
+        <th scope="col">adresse</th>
+        <th scope="col">Delete</th>
+        <th scope="col">Update</th>
+  
+      </tr>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+  
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of listOftodos">
+        <th scope="row">{{todo.id}}</th>
+          <td>{{todo.name}}</td>
+        <td>{{todo.nummer}}</td>
+        <td>{{todo.adresse}}</td>
+        <td><button type="button" class="btn btn-danger" (click)="delete(todo.id)"onClick="window.location.reload();">Delete</button></td>
+       <td> <button type="button" class="btn btn-warning" [routerLink]="['/update',todo.id]">Update</button></td>
+      </tr>
+    
+    </tbody>
+  
+  </table>
+  
+  <button (click)="showAddTodo()">Add Todo</button>
+  
+  <div *ngIf="show">
+  <form [formGroup]="todoForm"(ngSubmit)="handelSubmit">
+   
+    <label>
+      id
+      <input type ="number" formControlName ="id" >
+    </label>
+    
+    <br>
+    
+    <label>
+      name 
+      <input type="text" formControlName="name"> 
+    </label>
+    
+    <br>
+    
+    <label>
+      nummer
+      <input type="number" formControlName="nummer">
+    </label>
+  
+   
+    <br>
+    
+    <label>
+      adresse
+    <input type="text" formControlName="adresse">
+    </label>
+    <br>
+    
+    <input type ="submit" value ="Add this Todo">
+    
+    </form>
+  </div>
+  
