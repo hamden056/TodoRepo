@@ -5,7 +5,7 @@ import {UpdateComponent} from './Components/update/update.component'
 const routes: Routes = [
   
   {path :'todo' , component : TodoComponent},
-  {path : 'update/:id', component : UpdateComponent },
+  {path : 'todo/update/:id', component : UpdateComponent },
   {path :'' , redirectTo: '/todo',pathMatch:'full'},
   {path : '**', redirectTo: '/todo',pathMatch:'full'}
 ];

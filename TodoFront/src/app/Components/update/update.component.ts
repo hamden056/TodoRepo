@@ -13,9 +13,9 @@ import { TodoService } from 'src/app/Services/todo.service';
 })
 export class UpdateComponent implements OnInit {
 
-  todoToBeUpdated !:Todo ;
+  todoToBeUpdated!:Todo ;
 
-updatedForm!: FormGroup
+    updatedForm!: FormGroup
 
   show :boolean =false ; 
 
@@ -31,14 +31,18 @@ updatedForm!: FormGroup
 
     id: [''] , 
     name:[''], 
-    nummer : [''], 
-    adresse : [''],
+    nummer: [''], 
+    adresse: [''],
 
   }) ; 
   
   }
   handelSubmitUpdate(){
     this.todoService.update(this.todoToBeUpdated.id , this.updatedForm.value).subscribe() ;
+  }
+
+  showUpdate(){
+    this.show = !this.show ; 
   }
 
 update(){

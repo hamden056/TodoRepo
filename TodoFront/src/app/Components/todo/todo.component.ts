@@ -13,6 +13,7 @@ export class TodoComponent implements OnInit {
 listOftodos ?:Todo[] ; 
 todoForm !: FormGroup ; 
 show =false ; 
+up =false ; 
   constructor(private todoService  : TodoService ,private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -34,6 +35,7 @@ this.todoForm = this.fb.group({
   showAddTodo(){
     this.show =!this.show ; 
   }
+ 
 
   delete(id:number) {
     this.todoService.delete(id).subscribe(); 

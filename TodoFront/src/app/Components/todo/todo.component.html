@@ -20,18 +20,23 @@
         <td>{{todo.nummer}}</td>
         <td>{{todo.adresse}}</td>
         <td><button type="button" class="btn btn-danger" (click)="delete(todo.id)"onClick="window.location.reload();">Delete</button></td>
-       <td> <button type="button" class="btn btn-warning" [routerLink]="['/update',todo.id]">Update</button></td>
+       <td> <button type="button" class="btn btn-warning" [routerLink]="['/todo/update',todo.id]">Update</button></td>
+
+       
       </tr>
     
     </tbody>
-  
   </table>
-  
-  <button (click)="showAddTodo()">Add Todo</button>
+
+ 
+  <button type="button" class="btn btn-dark" (click)="showAddTodo()">Add Todo</button>
   
   <div *ngIf="show">
-  <form [formGroup]="todoForm"(ngSubmit)="handelSubmit">
+    
+  <form [formGroup]="todoForm"(ngSubmit)="handelSubmit()">
    
+
+    
     <label>
       id
       <input type ="number" formControlName ="id" >
@@ -60,7 +65,7 @@
     </label>
     <br>
     
-    <input type ="submit" value ="Add this Todo">
+    <input type ="submit" value ="Add this Todo"onClick="window.location.reload();">
     
     </form>
   </div>

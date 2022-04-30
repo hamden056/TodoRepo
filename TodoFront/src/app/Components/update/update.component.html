@@ -23,6 +23,8 @@
     </tbody>
   
   </table>
+  
+  <form [formGroup]="updatedForm"(ngSubmit)="handelSubmitUpdate()">
 
     <h2>Update:</h2>
 
@@ -45,6 +47,9 @@
         adresse
       <input type="text" formControlName="adresse">
       </label>
-      <input type ="submit" value ="Submit the Updates" onclick="window.location.reload();">
+      <input type ="submit" value ="Submit the Updates" type="button" class="btn btn-success" onclick="window.location.reload();">
     
-    
+    </form>
+
+    <br>
+    <button type="button" class="btn btn-primary" [routerLink]="['/todo']">Go Back To HomePage</button>
